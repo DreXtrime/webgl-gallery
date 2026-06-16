@@ -1,4 +1,4 @@
-# Orbit Gallery
+# Gallery
 A virtual art gallery built from scratch in Blender and rendered in the browser using Three.js, The gallery showcases handful of my personal projects as framed wall displays in a full 3D space, complete with baked lighting, custom models, and smooth camera transitions. Designed and optimized for touchscreens but works on any device.
 
 ---
@@ -17,10 +17,8 @@ A virtual art gallery built from scratch in Blender and rendered in the browser 
 - Smooth animated camera transitions between artworks
 - Optimized for touchscreen devices
 
-### Extra
-- Background classical music with toggle control
-
 ### Bonus
+- Playable radio, that plays the Estonian "Klassikaraadio" classical music radio live
 - `?tour` mode for public screens - automatically cycles through all artworks
 > In tour mode, background music  cannot be toggled off, as it is intended for unattended public screens.
 
