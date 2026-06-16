@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "preview": "vite preview",
-        "dev": "vite",
+        "dev": "vite --host",
         "build": "vite build",
         "start": "node check-build.js && vite preview --host",
         "format": "prettier --write ."
