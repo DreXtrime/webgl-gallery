@@ -34,6 +34,16 @@ An interactive 3D art gallery built in Blender and rendered in the browser using
 
 Append `?tour` to the URL to enable automatic tour mode.
 
+<details>
+<summary>Click for screenshots</summary>
+<table>
+<tr>
+<td><img src="./assets/screenshot_1.webp"/></td>
+<td><img src="./assets/screenshot_2.webp"/></td>
+</tr>
+</table>
+</details>
+
 ## Tech Stack
 
 - [Three.js](https://threejs.org/) - 3D rendering
