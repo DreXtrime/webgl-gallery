@@ -18,7 +18,7 @@ camera.lookAt(0, 1.7, -1);
 document.body.appendChild(renderer.domElement);
 renderer.setSize(window.innerWidth, window.innerHeight);
 scene.add(new THREE.AmbientLight(0xffffff, 1));
-
+// Artwork
 const artworks = [
     { name: 'Art_1_panel', texture: '/textures/art_1.webp', offset: new THREE.Vector3(2, 0, 0) },
     { name: 'Art_2_panel', texture: '/textures/art_2.webp', offset: new THREE.Vector3(2, 0, 0) },
@@ -47,7 +47,7 @@ loader.load('/models/gallery.glb', (gltf) => {
         object.material = new THREE.MeshBasicMaterial({ map: tex });
     });
 });
-
+// Camera & movement
 let currentWaypoint = -1;
 let phase = 'idle';
 const targetPosition = new THREE.Vector3(0, 1.7, 0);
@@ -98,18 +98,22 @@ window.addEventListener('load', () => {
         overlay.addEventListener('transitionend', () => overlay.remove());
     }, 800);
 });
-
-const audio = new Audio('https://icecast.err.ee/klassikaraadiomadal.opus');
-audio.loop = true;
-
+// Audio
+const streamUrl = 'https://icecast.err.ee/klassikaraadiomadal.opus';
+const audio = new Audio();
 document.getElementById('music-btn').addEventListener('click', () => {
     if (audio.paused) {
-        audio.play();
+        audio.src = streamUrl;
+        audio.play().catch((error) => {
+            console.error('Playback failed:', error);
+        });
         audio.volume = 0.5;
         document.getElementById('music-btn').textContent = '❚❚';
         if (tour) document.getElementById('music-btn').style.display = 'none';
     } else {
         audio.pause();
+        audio.src = '';
+        audio.load();
         document.getElementById('music-btn').textContent = '▷';
     }
 });
@@ -122,7 +126,6 @@ function animate() {
     } else if (phase === 'moving') {
         camera.position.lerp(targetPosition, 0.03);
         controls.target.lerp(targetLookAt, 0.05);
-        // if (camera.position.distanceTo(targetPosition) < 0.05) phase = 'idle'
     }
     controls.update();
     renderer.render(scene, camera);
