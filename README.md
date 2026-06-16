@@ -28,7 +28,7 @@ A virtual art gallery built from scratch in Blender and rendered in the browser 
 The gallery features four wall displays and one podium exhibit:
 
 - Images of my past projects
-- old blender renders when I was learning blender
+- Previous blender renders when I was learning blender
 - **The Podium** - The classic Blender donut from the [official Blender tutorial](https://www.youtube.com/watch?v=B0J27sf9N1Y), a rite of passage for every Blender beginner
 
 
