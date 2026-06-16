@@ -1,0 +1,20 @@
+{
+    "name": "gallery",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "preview": "vite preview",
+        "dev": "vite",
+        "build": "vite build",
+        "start": "node check-build.js && vite preview --host",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "^3.8.4",
+        "vite": "^8.0.12"
+    },
+    "dependencies": {
+        "three": "^0.184.0"
+    }
+}
