@@ -54,6 +54,16 @@ Append `?tour` to the URL to enable automatic tour mode.
 </table>
 </details>
 
+## Performance
+
+The 3D scene has been optimized for browser delivery:
+
+- **Textures** are exported as `.webp` for smaller file sizes
+- **Lighting** is baked directly into the scene in Blender using cycles render engine, removing the need for real-time lights in Three.js
+- **Models** have been decimated to reduce polygon count before import
+- **Scene** is exported as a single `.glb` file to minimize HTTP requests
+- **Polygon count:** 3,300 triangles
+
 ## Tech Stack
 
 - [Three.js](https://threejs.org/) - 3D rendering
