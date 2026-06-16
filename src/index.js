@@ -4,19 +4,15 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import './style.css';
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-    70,
-    window.innerWidth / window.innerHeight,
-    0.01,
-    1000
-);
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 const controls = new OrbitControls(camera, renderer.domElement);
+const tour = new URLSearchParams(window.location.search).has('tour');
 
 controls.enableZoom = false;
 controls.enablePan = false;
-controls.target.set(0, 1.7, -1);
 controls.update();
+controls.target.set(0, 1.7, -1);
 camera.position.set(0, 1.7, 0);
 camera.lookAt(0, 1.7, -1);
 document.body.appendChild(renderer.domElement);
@@ -24,26 +20,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 scene.add(new THREE.AmbientLight(0xffffff, 1));
 
 const artworks = [
-    {
-        name: 'Art_1_panel',
-        texture: '/textures/art_1.webp',
-        offset: new THREE.Vector3(2, 0, 0),
-    },
-    {
-        name: 'Art_2_panel',
-        texture: '/textures/art_2.webp',
-        offset: new THREE.Vector3(2, 0, 0),
-    },
-    {
-        name: 'Art_3_panel',
-        texture: '/textures/art_3.webp',
-        offset: new THREE.Vector3(-2, 0, 0),
-    },
-    {
-        name: 'Art_4_panel',
-        texture: '/textures/art_4.webp',
-        offset: new THREE.Vector3(-2, 0, 0),
-    },
+    { name: 'Art_1_panel', texture: '/textures/art_1.webp', offset: new THREE.Vector3(2, 0, 0) },
+    { name: 'Art_2_panel', texture: '/textures/art_2.webp', offset: new THREE.Vector3(2, 0, 0) },
+    { name: 'Art_3_panel', texture: '/textures/art_3.webp', offset: new THREE.Vector3(-2, 0, 0) },
+    { name: 'Art_4_panel', texture: '/textures/art_4.webp', offset: new THREE.Vector3(-2, 0, 0) },
     { name: 'Donut', offset: new THREE.Vector3(0.1, 0.2, 0.3) },
     { name: 'Milk_carton', offset: new THREE.Vector3(-0.3, 0, -0.1) },
 ];
@@ -95,8 +75,15 @@ function prev() {
     goToWaypoint(currentWaypoint);
 }
 
-document.getElementById('next-btn').addEventListener('click', next);
-document.getElementById('prev-btn').addEventListener('click', prev);
+if (tour) {
+    document.getElementById('next-btn').style.display = 'none';
+    document.getElementById('prev-btn').style.display = 'none';
+    controls.enableRotate = false;
+    setInterval(next, 5000);
+} else {
+    document.getElementById('next-btn').addEventListener('click', next);
+    document.getElementById('prev-btn').addEventListener('click', prev);
+}
 
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -112,6 +99,7 @@ document.getElementById('music-btn').addEventListener('click', () => {
         audio.play();
         audio.volume = 0.5;
         document.getElementById('music-btn').textContent = '❚❚';
+        if (tour) document.getElementById('music-btn').style.display = 'none';
     } else {
         audio.pause();
         document.getElementById('music-btn').textContent = '▷';
