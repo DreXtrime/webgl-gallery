@@ -1,0 +1,76 @@
+# Orbit Gallery
+An interactive 3D art gallery built in Blender and rendered in the browser using Three.js, showcasing my school projects as gallery artworks.
+
+---
+
+🌐 Automatically deployed via GitHub Actions on every push to **https://gallery.tanelneitov.eu**
+
+![Screenshot](./assets/screenshot_1.png)
+
+---
+
+## Features
+
+### Core
+- 3D gallery scene created in Blender with baked lighting
+- Multiple artworks showcasing school projects or references
+- Smooth animated camera transitions between artworks
+- Optimized for touchscreen devices
+
+### Extra
+- Background classical music with toggle control
+
+### Bonus
+- `?tour` mode for public screens -- automatically cycles through all artworks
+
+## Controls
+
+| Action | Control |
+|--------|---------|
+| Look around | Click and drag |
+| Next artwork | → button |
+| Previous artwork | ← button |
+| Toggle music | Music button |
+
+Append `?tour` to the URL to enable automatic tour mode.
+
+## Tech Stack
+
+- [Three.js](https://threejs.org/) - 3D rendering
+- [Blender](https://www.blender.org/) - 3D scene and model creation
+- [Vite](https://vitejs.dev/) - build tool
+- Vanilla JS and CSS - no UI framework
+
+## Deployment
+
+Deployed automatically to [Zone.eu](https://www.zone.eu) via GitHub Actions on every push to `main`.  
+Thank you to [kood//](https://kood.tech/en/) and [Zone](https://www.zone.eu) for providing the domain!  
+**https://gallery.tanelneitov.eu** or **https://gallery.tanelneitov.eu?tour**
+
+### Prerequisites
+- Node.js 22+
+
+### Local Development
+
+```bash
+git clone https://github.com/DreXtrime/gallery.git
+cd gallery
+npm install
+npm run dev
+```
+
+### Build & Preview
+
+```bash
+npm install
+npm run build
+npm start
+```
+
+> `npm start` will error if the project hasn't been built yet.
+
+---
+
+## Authors
+
+- [@tanelerikneitov](https://www.github.com/DreXtrime)
