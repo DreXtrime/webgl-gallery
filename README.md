@@ -41,9 +41,9 @@ The gallery features four wall displays and one podium exhibit:
 | Previous artwork | ← button |
 | Toggle music | Music button |
 
-Append `?tour` to the URL to enable automatic tour mode.
-Append `?wireframe` to the URL to enable wireframe mode.
-Append `?tour&?wireframe` for both
+Append `?tour` to the URL to enable automatic tour mode.  
+Append `?wireframe` to the URL to enable wireframe mode.  
+Append `?tour&?wireframe` for both  
 
 <details>
 <summary>Click for screenshots</summary>
