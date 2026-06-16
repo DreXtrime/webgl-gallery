@@ -19,6 +19,7 @@ A virtual art gallery built from scratch in Blender and rendered in the browser 
 
 ### Bonus
 - Playable radio, that plays the Estonian "Klassikaraadio" classical music radio live
+- `?wireframe` mode to visualize all polygons
 - `?tour` mode for public screens - automatically cycles through all artworks
 > In tour mode, background music  cannot be toggled off, as it is intended for unattended public screens.
 
@@ -41,6 +42,8 @@ The gallery features four wall displays and one podium exhibit:
 | Toggle music | Music button |
 
 Append `?tour` to the URL to enable automatic tour mode.
+Append `?wireframe` to the URL to enable wireframe mode.
+Append `?tour&?wireframe` for both
 
 <details>
 <summary>Click for screenshots</summary>
@@ -60,7 +63,7 @@ The 3D scene has been optimized for browser delivery:
 - **Lighting** is baked directly into the scene in Blender using cycles render engine, removing the need for real-time lights in Three.js
 - **Models** have been decimated to reduce polygon count before import
 - **Scene** is exported as a single `.glb` file to minimize HTTP requests
-- **Polygon count:** 3,300 triangles
+- **Polygon count:** 3,300 triangles 
 
 ## Tech Stack
 
@@ -86,6 +89,7 @@ cd gallery
 npm install
 npm run dev
 ```
+The url will be printed in the terminal.  
 
 ### Build & Preview
 
@@ -94,9 +98,11 @@ npm install
 npm run build
 npm start
 ```
-
-> `npm start` will error if the project hasn't been built yet.
-
+The url will be printed in the terminal.  
+> `npm start` will error if the project hasn't been built yet.  
+> Append `?tour` to the URL to enable automatic tour mode.  
+> Append `?wireframe` to the URL to enable wireframe mode.  
+> Append `?tour&?wireframe` for both
 ---
 
 ## Authors
