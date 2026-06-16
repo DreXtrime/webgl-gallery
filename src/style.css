@@ -29,3 +29,12 @@ canvas {
     cursor: pointer;
     backdrop-filter: blur(10px);
 }
+
+/* Fade */
+#fade-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 1001;
+    transition: opacity 1.5s ease;
+}

@@ -91,6 +91,14 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const overlay = document.getElementById('fade-overlay');
+        overlay.style.opacity = '0';
+        overlay.addEventListener('transitionend', () => overlay.remove());
+    }, 800);
+});
+
 const audio = new Audio('https://icecast.err.ee/klassikaraadiomadal.opus');
 audio.loop = true;
 
