@@ -21,7 +21,17 @@ An interactive 3D art gallery built in Blender and rendered in the browser using
 - Background classical music with toggle control
 
 ### Bonus
-- `?tour` mode for public screens -- automatically cycles through all artworks
+- `?tour` mode for public screens - automatically cycles through all artworks
+> In tour mode, background music  cannot be toggled off, as it is intended for unattended public screens.
+
+## Artworks
+
+The gallery features four wall displays and one podium exhibit:
+
+- Images of my past projects
+- old blender renders when I was learning blender
+- **The Podium** - The classic Blender donut from the [official Blender tutorial](https://www.youtube.com/watch?v=B0J27sf9N1Y), a rite of passage for every Blender beginner
+
 
 ## Controls
 
