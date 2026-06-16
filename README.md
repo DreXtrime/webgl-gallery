@@ -1,5 +1,5 @@
 # Orbit Gallery
-A virtual art gallery built from scratch in Blender and rendered in the browser using Three.js, The gallery showcases handful of my personal projects as framed wall displays in a full 3D space, complete with baked lighting, custom models, and smooth camera transitions. Designed and optimized for touchscreen kiosks but works on any device.
+A virtual art gallery built from scratch in Blender and rendered in the browser using Three.js, The gallery showcases handful of my personal projects as framed wall displays in a full 3D space, complete with baked lighting, custom models, and smooth camera transitions. Designed and optimized for touchscreens but works on any device.
 
 ---
 
