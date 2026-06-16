@@ -38,8 +38,8 @@ Append `?tour` to the URL to enable automatic tour mode.
 <summary>Click for screenshots</summary>
 <table>
 <tr>
-<td><img src="./assets/screenshot_1.webp"/></td>
 <td><img src="./assets/screenshot_2.webp"/></td>
+<td><img src="./assets/screenshot_3.webp"/></td>
 </tr>
 </table>
 </details>
