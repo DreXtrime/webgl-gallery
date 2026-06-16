@@ -8,6 +8,7 @@ const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 const controls = new OrbitControls(camera, renderer.domElement);
 const tour = new URLSearchParams(window.location.search).has('tour');
+const wireframe = new URLSearchParams(window.location.search).has('wireframe');
 
 controls.enableZoom = false;
 controls.enablePan = false;
@@ -20,12 +21,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 scene.add(new THREE.AmbientLight(0xffffff, 1));
 // Artwork
 const artworks = [
-    { name: 'Art_1_panel', texture: '/textures/art_1.webp', offset: new THREE.Vector3(2, 0, 0) },
-    { name: 'Art_2_panel', texture: '/textures/art_2.webp', offset: new THREE.Vector3(2, 0, 0) },
     { name: 'Art_3_panel', texture: '/textures/art_3.webp', offset: new THREE.Vector3(-2, 0, 0) },
     { name: 'Art_4_panel', texture: '/textures/art_4.webp', offset: new THREE.Vector3(-2, 0, 0) },
     { name: 'Donut', offset: new THREE.Vector3(0.1, 0.2, 0.3) },
     { name: 'Milk_carton', offset: new THREE.Vector3(-0.3, 0, -0.1) },
+    { name: 'Art_2_panel', texture: '/textures/art_2.webp', offset: new THREE.Vector3(2, 0, 0) },
+    { name: 'Art_1_panel', texture: '/textures/art_1.webp', offset: new THREE.Vector3(2, 0, 0) },
 ];
 
 const loader = new GLTFLoader();
@@ -46,7 +47,19 @@ loader.load('/models/gallery.glb', (gltf) => {
         tex.flipY = false;
         object.material = new THREE.MeshBasicMaterial({ map: tex });
     });
+    if (wireframe) {
+        toggleWireframe();
+    }
 });
+
+function toggleWireframe() {
+    scene.traverse((object) => {
+        if (object.isMesh) {
+            object.material.wireframe = wireframe;
+        }
+    });
+}
+
 // Camera & movement
 let currentWaypoint = -1;
 let phase = 'idle';
