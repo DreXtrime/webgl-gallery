@@ -85,7 +85,7 @@ Thank you to [kood//](https://kood.tech/en/) and [Zone](https://www.zone.eu) for
 
 ```bash
 git clone https://github.com/DreXtrime/webgl-gallery.git
-cd gallery
+cd webgl-gallery
 npm install
 npm run dev
 ```
