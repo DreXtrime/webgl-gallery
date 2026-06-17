@@ -43,7 +43,7 @@ The gallery features four wall displays and one podium exhibit:
 
 Append `?tour` to the URL to enable automatic tour mode.  
 Append `?wireframe` to the URL to enable wireframe mode.  
-Append `?tour&?wireframe` for both  
+Append `?tour&wireframe` for both  
 
 <details>
 <summary>Click for screenshots</summary>
@@ -102,7 +102,7 @@ The url will be printed in the terminal.
 > `npm start` will error if the project hasn't been built yet.  
 > Append `?tour` to the URL to enable automatic tour mode.  
 > Append `?wireframe` to the URL to enable wireframe mode.  
-> Append `?tour&?wireframe` for both
+> Append `?tour&wireframe` for both
 ---
 
 ## Authors
