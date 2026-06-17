@@ -84,7 +84,7 @@ Thank you to [kood//](https://kood.tech/en/) and [Zone](https://www.zone.eu) for
 ### Local Development
 
 ```bash
-git clone https://github.com/DreXtrime/gallery.git
+git clone https://github.com/DreXtrime/webgl-gallery.git
 cd gallery
 npm install
 npm run dev
